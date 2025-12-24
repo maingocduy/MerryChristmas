@@ -770,79 +770,6 @@
       function updateSocialMetaTags() {
         // Cập nhật URL ngay lập tức (không cần đợi API)
         updateURLImmediately();
-
-        if (apiData) {
-          // Cập nhật title và description dựa trên dữ liệu API
-          let customTitle = "Merry Christmas - Chúc mừng Giáng Sinh";
-          let customDescription =
-            "Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨";
-
-          // Nếu có tên người gửi, thêm vào title
-          if (apiData.senderName) {
-            customTitle = `Merry Christmas - Từ ${apiData.senderName}`;
-            customDescription = `${apiData.senderName} gửi lời chúc: Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨`;
-          }
-
-          // Cập nhật title của trang
-          document.title = customTitle;
-
-          // Cập nhật meta description
-          const metaDescription = document.querySelector(
-            'meta[name="description"]'
-          );
-          if (metaDescription) {
-            metaDescription.setAttribute("content", customDescription);
-          }
-
-          // Cập nhật Open Graph tags
-          const ogTitle = document.querySelector('meta[property="og:title"]');
-          if (ogTitle) {
-            ogTitle.setAttribute("content", customTitle);
-          }
-
-          const ogDescription = document.querySelector(
-            'meta[property="og:description"]'
-          );
-          if (ogDescription) {
-            ogDescription.setAttribute("content", customDescription);
-          }
-
-          // Cập nhật Twitter tags
-          const twitterTitle = document.querySelector(
-            'meta[name="twitter:title"]'
-          );
-          if (twitterTitle) {
-            twitterTitle.setAttribute("content", customTitle);
-          }
-
-          const twitterDescription = document.querySelector(
-            'meta[name="twitter:description"]'
-          );
-          if (twitterDescription) {
-            twitterDescription.setAttribute("content", customDescription);
-          }
-
-          // Sử dụng ảnh tĩnh og-image.png với URL đầy đủ
-          const ogImagePath =
-            "https://trung-thu-two.vercel.app/image/og-image.png";
-          const ogImageMeta = document.querySelector(
-            'meta[property="og:image"]'
-          );
-          if (ogImageMeta) {
-            ogImageMeta.setAttribute("content", ogImagePath);
-          }
-
-          const twitterImageMeta = document.querySelector(
-            'meta[name="twitter:image"]'
-          );
-          if (twitterImageMeta) {
-            twitterImageMeta.setAttribute("content", ogImagePath);
-          }
-
-          console.log(
-            "Đã cập nhật meta tags cho chia sẻ mạng xã hội với ảnh og-image.png"
-          );
-        }
       }
 
       // Function để hiển thị loading screen
@@ -1169,12 +1096,11 @@
         // (tức là trường hợp không gọi API hoặc API không trả về messages)
         return [
           "Noel an lành",
-          "Luôn mỉm cười",
-          "Thật nhiều niềm vui",
-          "Bình an nhé",
-          "Ấm áp mùa đông",
-          "Giữ gìn sức khỏe",
-          "Vui vẻ mỗi ngày",
+          "Sức khỏe dồi dào",
+          "Tâm luôn bình an",
+          "Nhiều niềm vui",
+          "Gia đình ấm áp",
+          "Mỗi ngày yên vui",
           "Merry Christmas",
           "Winter vibes ❄️",
         ];
@@ -1199,8 +1125,13 @@
           // "img/pham-trang/603897187_18441428128099099_8580855929634738534_n.jpg",
           // "img/pham-trang/605084570_2679862189030023_5511796960262716957_n.jpg",
           // "img/pham-trang/602921680_1915512922362297_5058000629748404016_n.jpg",
-          "img/thao-phuong/Untitled.png",
-          "img/thao-phuong/Untitled1.png",
+          // "img/thao-phuong/Untitled.png",
+          // "img/thao-phuong/Untitled1.png",
+          "img/aunt/aunt1.png",
+          "img/aunt/aunt2.png",
+          "img/aunt/aunt3.png",
+          "img/aunt/aunt4.png",
+          "img/aunt/aunt5.png",
         ];
         return defaults.concat(apiImages);
       }
