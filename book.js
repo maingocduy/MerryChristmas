@@ -2,8 +2,9 @@
 // Mặc định nếu backend không trả dữ liệu
 const defaultMessageData = [
   "Giáng sinh này,",
-  "mong bạn luôn bình an,",
-  "ấm áp bên những người mình thương.",
+  "chúc chị luôn bình an,",
+  "ấm áp bên gia đình và người thân,",
+  "và thật nhiều niềm vui trong mùa đông này.",
 ];
 
 // Lấy dữ liệu bức thư từ API (trung thu / noel) nếu có
