@@ -6,10 +6,6 @@
 
     <!-- Meta tags cho SEO và chia sẻ mạng xã hội -->
     <meta
-      name="description"
-      content="Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨"
-    />
-    <meta
       name="keywords"
       content="noel, giáng sinh, christmas, lời chúc, mưa chữ 3D, tình yêu, hạnh phúc, messenger, facebook"
     />
@@ -19,10 +15,6 @@
     <meta
       property="og:title"
       content="🎄 Merry Christmas - Chúc mừng Giáng Sinh"
-    />
-    <meta
-      property="og:description"
-      content="Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨"
     />
     <meta
       property="og:image"
@@ -776,79 +768,6 @@
       function updateSocialMetaTags() {
         // Cập nhật URL ngay lập tức (không cần đợi API)
         updateURLImmediately();
-
-        if (apiData) {
-          // Cập nhật title và description dựa trên dữ liệu API
-          let customTitle = "Merry Christmas - Chúc mừng Giáng Sinh";
-          let customDescription =
-            "Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨";
-
-          // Nếu có tên người gửi, thêm vào title
-          if (apiData.senderName) {
-            customTitle = `Merry Christmas - Từ ${apiData.senderName}`;
-            customDescription = `${apiData.senderName} gửi lời chúc: Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🎄✨`;
-          }
-
-          // Cập nhật title của trang
-          document.title = customTitle;
-
-          // Cập nhật meta description
-          const metaDescription = document.querySelector(
-            'meta[name="description"]'
-          );
-          if (metaDescription) {
-            metaDescription.setAttribute("content", customDescription);
-          }
-
-          // Cập nhật Open Graph tags
-          const ogTitle = document.querySelector('meta[property="og:title"]');
-          if (ogTitle) {
-            ogTitle.setAttribute("content", customTitle);
-          }
-
-          const ogDescription = document.querySelector(
-            'meta[property="og:description"]'
-          );
-          if (ogDescription) {
-            ogDescription.setAttribute("content", customDescription);
-          }
-
-          // Cập nhật Twitter tags
-          const twitterTitle = document.querySelector(
-            'meta[name="twitter:title"]'
-          );
-          if (twitterTitle) {
-            twitterTitle.setAttribute("content", customTitle);
-          }
-
-          const twitterDescription = document.querySelector(
-            'meta[name="twitter:description"]'
-          );
-          if (twitterDescription) {
-            twitterDescription.setAttribute("content", customDescription);
-          }
-
-          // Sử dụng ảnh tĩnh og-image.png với URL đầy đủ
-          const ogImagePath =
-            "https://trung-thu-two.vercel.app/image/og-image.png";
-          const ogImageMeta = document.querySelector(
-            'meta[property="og:image"]'
-          );
-          if (ogImageMeta) {
-            ogImageMeta.setAttribute("content", ogImagePath);
-          }
-
-          const twitterImageMeta = document.querySelector(
-            'meta[name="twitter:image"]'
-          );
-          if (twitterImageMeta) {
-            twitterImageMeta.setAttribute("content", ogImagePath);
-          }
-
-          console.log(
-            "Đã cập nhật meta tags cho chia sẻ mạng xã hội với ảnh og-image.png"
-          );
-        }
       }
 
       // Function để hiển thị loading screen
